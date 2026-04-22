@@ -1,40 +1,68 @@
+# 名字随便起，GitHub 界面上会显示这个
 name: Deploy Hugo site to Pages
+
 on:
+  # 每次你 git push 到 main 分支时自动触发
   push:
     branches:
       - main
+  # 允许你在 GitHub 页面上点按钮手动触发
+  workflow_dispatch:
+
+# 核心权限设置，必须开启以允许发布到 Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+
+# 2026 年环境强制要求使用 Node 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+# 编译与部署流程
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.140.0/hugo_extended_0.140.0_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      # 1. 拉取代码。注意 submodules 必须设为 recursive 才能拉到 blowfish 主题
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      # 2. 安装 Hugo 核心。版本号 0.160.1 是跟你本地对齐的“死命令”
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.160.1'
+          extended: true
+
+      # 3. 安装 Blowfish 主题编译 CSS 必备的 Dart Sass
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      # 4. 初始化 GitHub Pages 环境
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      # 5. 正式执行 Hugo 编译
+      # --gc 会自动清理缓存，--minify 会压缩网页代码提高访问速度
       - name: Build with Hugo
         run: |
           hugo \
+            --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # 6. 将编译出的 public 文件夹上传到临时存储
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
+  # 部署任务，紧跟在 build 任务之后执行
   deploy:
     environment:
       name: github-pages
@@ -42,6 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      # 将上一步上传的网页正式发布到 https://ta1ntf10w.github.io/
       - name: Deploy to GitHub Pages
         id: deploy_pages
         uses: actions/deploy-pages@v4
