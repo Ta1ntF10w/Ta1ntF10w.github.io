@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 行到水穷处，坐看云起时</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on 行到水穷处，坐看云起时</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
+    <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
+    <copyright>2026 Ta1ntF10w</copyright>
+    <lastBuildDate>Wed, 22 Apr 2026 15:58:26 +0800</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java Deserialization Cc1</title>
+      <link>//localhost:1313/posts/cc1/</link>
+      <pubDate>Wed, 22 Apr 2026 15:58:26 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/cc1/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

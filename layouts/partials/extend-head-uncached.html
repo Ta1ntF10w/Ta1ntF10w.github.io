@@ -1,0 +1,9 @@
+{{ with resources.Get "js/custom-bg.js" }}
+  {{ $alg := site.Params.fingerprintAlgorithm | default "sha512" }}
+  {{ $customBg := . | resources.Minify | resources.Fingerprint $alg }}
+  <script
+    defer
+    type="text/javascript"
+    src="{{ $customBg.RelPermalink }}"
+    integrity="{{ $customBg.Data.Integrity }}"></script>
+{{ end }}

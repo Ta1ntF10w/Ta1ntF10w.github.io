@@ -1,0 +1,22 @@
+[[main]]
+  name = "研究笔记"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "内容分类"
+  identifier = "categories"
+  weight = 20
+
+[[main]]
+  name = "Java 安全"
+  parent = "categories"
+  pageRef = "categories/java"
+  weight = 1
+
+[[main]]
+  name = "静态分析"
+  parent = "categories"
+  pageRef = "categories/static-analysis"
+  weight = 2
+
