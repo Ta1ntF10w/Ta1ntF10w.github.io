@@ -9,6 +9,8 @@ title = "行到水穷处，坐看云起时"
   isoCode = "zh-cn"
   rtl = false
   dateFormat = "2006-01-02"
+  logo = "img/tab_expand_2.svg"
+  # secondaryLogo = "img/doraemon-mark.svg"
   description = "记录 Java 安全与静态分析的学习路径"
   copyright = "2026 Ta1ntF10w"
 
@@ -17,7 +19,7 @@ title = "行到水穷处，坐看云起时"
    email = "2030305719@qq.com"
    image = "img/Doraemon.png"
    imageQuality = 96
-   headline = "网络安全研究员 | 软件工程"
+  headline = "网络安全 | 软件工程"
    bio = "研究方向聚焦于软件安全与程序分析，重点研究Java反序列化漏洞、自动化Gadget链构建以及基于Soot框架的静态分析方法。"
    links = [
      { email = "mailto:2030305719@qq.com" },

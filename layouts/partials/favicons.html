@@ -1,0 +1,9 @@
+{{ with resources.Get "img/cat.svg" }}
+	<link rel="icon" type="image/svg+xml" href="{{ .RelPermalink }}">
+	<link rel="shortcut icon" href="{{ .RelPermalink }}">
+{{ else }}
+	<link rel="icon" type="image/svg+xml" href="{{ "cat.svg" | relURL }}">
+	<link rel="shortcut icon" href="{{ "cat.svg" | relURL }}">
+{{ end }}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">

@@ -2,15 +2,15 @@ disabled = false
 locale = "en"
 label = "English"
 weight = 1
-title = "Seeking Clarity at the Horizon"
+title = "Ta1ntF10w's blog"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  # logo = "img/Doraemon.png"
-  # secondaryLogo = "img/Doraemon.png"
+  logo = "img/tab_expand_2.svg"
+  # secondaryLogo = "img/doraemon-mark.svg"
   description = "My awesome website"
   copyright = "© 2026 Ta1ntF10w"
 
@@ -19,7 +19,7 @@ title = "Seeking Clarity at the Horizon"
    email = "2030305719@qq.com"
    image = "img/Doraemon.png"
    imageQuality = 96
-   headline = "Cybersecurity Researcher | Software Engineering"
+  headline = "Cybersecurity | Software Engineering"
    bio = "Research interests focus on **Software Security and Program Analysis**, with a primary emphasis on Java deserialization vulnerabilities, automated Gadget Chain construction, and static analysis methodologies using the Soot framework."
    links = [
      { email = "mailto:2030305719@qq.com" },

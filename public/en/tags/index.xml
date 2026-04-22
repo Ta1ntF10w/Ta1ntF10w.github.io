@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Seeking Clarity at the Horizon</title>
-    <link>//localhost:1313/en/tags/</link>
-    <description>Recent content in Tags on Seeking Clarity at the Horizon</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
-    <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
-    <copyright>© 2026 Ta1ntF10w</copyright>
-    <atom:link href="//localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Ta1ntF10w's blog</title><link>/en/tags/</link><description>Recent content in Tags on Ta1ntF10w's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor><webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster><copyright>© 2026 Ta1ntF10w</copyright><atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>

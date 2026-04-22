@@ -22,6 +22,18 @@
   --flow-y-front: 0px;
   --flow-tilt: 34deg;
   --flow-scroll-blur: 0px;
+  --cursor-ring: rgba(55, 123, 189, 0.68);
+  --cursor-core: rgba(44, 112, 178, 0.92);
+    --flow-vortex-x: 0px;
+    --flow-vortex-y: 0px;
+    --flow-impact-x: 50%;
+    --flow-impact-y: 50%;
+    --flow-impact-energy: 0;
+  --cursor-glow: rgba(102, 168, 230, 0.35);
+  --cursor-wave: rgba(74, 141, 205, 0.55);
+  --cursor-spark: rgba(56, 132, 204, 0.9);
+  --code-scrollbar-thumb: rgba(60, 110, 162, 0.9);
+  --code-scrollbar-track: rgba(138, 180, 220, 0.34);
 }
 
 html.dark {
@@ -38,11 +50,142 @@ html.dark {
   --dust-a: rgba(226, 248, 238, 0.36);
   --dust-b: rgba(201, 235, 219, 0.3);
   --dust-c: rgba(183, 223, 204, 0.24);
+  --cursor-ring: rgba(188, 224, 255, 0.78);
+  --cursor-core: rgba(223, 241, 255, 0.98);
+  --cursor-glow: rgba(150, 202, 252, 0.44);
+  --cursor-wave: rgba(178, 221, 255, 0.62);
+  --cursor-spark: rgba(212, 237, 255, 0.96);
+  --code-scrollbar-thumb: rgba(186, 229, 255, 0.96);
+  --code-scrollbar-track: rgba(44, 78, 108, 0.55);
 }
 
 /* Keep a subtle atmospheric canvas behind all pages. */
 body {
   background: transparent !important;
+}
+
+html.cursor-fx-enabled,
+html.cursor-fx-enabled *,
+body.cursor-fx-enabled,
+body.cursor-fx-enabled *,
+html.cursor-fx-enabled:active,
+html.cursor-fx-enabled *:active,
+body.cursor-fx-enabled:active,
+body.cursor-fx-enabled *:active {
+  cursor: none !important;
+}
+
+html.cursor-fx-enabled ::-webkit-scrollbar,
+html.cursor-fx-enabled ::-webkit-scrollbar-thumb,
+html.cursor-fx-enabled ::-webkit-scrollbar-track,
+body.cursor-fx-enabled ::-webkit-scrollbar,
+body.cursor-fx-enabled ::-webkit-scrollbar-thumb,
+body.cursor-fx-enabled ::-webkit-scrollbar-track {
+  cursor: none !important;
+}
+
+.cursor-fx-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-fx-ring,
+.cursor-fx-core {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  will-change: left, top, transform, opacity;
+}
+
+.cursor-fx-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.8px solid var(--cursor-ring);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 24px var(--cursor-glow);
+  transition: width 170ms ease, height 170ms ease, border-color 170ms ease, opacity 170ms ease;
+}
+
+.cursor-fx-ring::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--cursor-ring) 72%, transparent);
+}
+
+.cursor-fx-core {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--cursor-core);
+  box-shadow: 0 0 18px var(--cursor-glow);
+  transition: transform 170ms ease, opacity 170ms ease;
+}
+
+body.cursor-fx-hover .cursor-fx-ring {
+  width: 48px;
+  height: 48px;
+  border-color: var(--cursor-core);
+}
+
+body.cursor-fx-hover .cursor-fx-core {
+  transform: translate(-50%, -50%) scale(1.18);
+}
+
+body.cursor-fx-pressed .cursor-fx-ring {
+  width: 28px;
+  height: 28px;
+}
+
+body.cursor-fx-pressed .cursor-fx-core {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cursor-click-wave,
+.cursor-click-spark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cursor-click-wave {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2.4px solid var(--cursor-wave);
+  opacity: 0.9;
+  animation: cursor-wave 560ms cubic-bezier(0.2, 0.6, 0.25, 1) forwards;
+}
+
+.cursor-click-spark {
+  width: var(--spark-size, 3.8px);
+  height: var(--spark-size, 3.8px);
+  border-radius: 999px;
+  background: var(--cursor-spark);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cursor-spark) 62%, transparent);
+  opacity: 0.95;
+  animation: cursor-spark 620ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
+}
+
+.cursor-fx-trail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--trail-size, 10px);
+  height: var(--trail-size, 10px);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  background: color-mix(in srgb, var(--cursor-core) 62%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cursor-glow) 72%, transparent);
+  opacity: var(--trail-opacity, 0.2);
+  pointer-events: none;
+  will-change: left, top, opacity;
 }
 
 .falling-lines-bg {
@@ -72,6 +215,19 @@ body {
     ),
     linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
   opacity: 0.34;
+}
+
+.falling-lines-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(36% 36% at var(--cursor-x) var(--cursor-y), color-mix(in srgb, var(--flow-aura) 64%, transparent), transparent 72%),
+    radial-gradient(14% 14% at var(--flow-impact-x) var(--flow-impact-y), rgba(160, 214, 255, 0.46), transparent 100%);
+  opacity: calc(0.18 + (var(--flow-impact-energy) * 0.55));
+  mix-blend-mode: screen;
 }
 
 .cursor-aura {
@@ -141,7 +297,12 @@ html.dark .stardust-layer {
 }
 
 .line-back {
-  transform: translate3d(var(--flow-x-back), var(--flow-y-back), 0) rotate(var(--flow-tilt));
+  transform: translate3d(
+      calc(var(--flow-x-back) + (var(--flow-vortex-x) * 0.2)),
+      calc(var(--flow-y-back) + (var(--flow-vortex-y) * 0.2)),
+      0
+    )
+    rotate(var(--flow-tilt));
   opacity: 0.66;
 }
 
@@ -151,7 +312,12 @@ html.dark .stardust-layer {
 }
 
 .line-mid {
-  transform: translate3d(var(--flow-x-mid), var(--flow-y-mid), 0) rotate(var(--flow-tilt));
+  transform: translate3d(
+      calc(var(--flow-x-mid) + (var(--flow-vortex-x) * 0.42)),
+      calc(var(--flow-y-mid) + (var(--flow-vortex-y) * 0.42)),
+      0
+    )
+    rotate(var(--flow-tilt));
   opacity: 0.84;
 }
 
@@ -161,7 +327,12 @@ html.dark .stardust-layer {
 }
 
 .line-front {
-  transform: translate3d(var(--flow-x-front), var(--flow-y-front), 0) rotate(var(--flow-tilt));
+  transform: translate3d(
+      calc(var(--flow-x-front) + (var(--flow-vortex-x) * 0.72)),
+      calc(var(--flow-y-front) + (var(--flow-vortex-y) * 0.72)),
+      0
+    )
+    rotate(var(--flow-tilt));
   opacity: 1;
 }
 
@@ -323,10 +494,20 @@ html.dark .line-front span {
 
 @keyframes diagonal-fall {
   from {
-    transform: translate3d(var(--fall-x-start, 0), var(--fall-y-start, var(--fall-start)), 0) rotate(var(--line-lean));
+    transform: translate3d(
+        calc(var(--fall-x-start, 0) + var(--line-sway-x, 0px)),
+        calc(var(--fall-y-start, var(--fall-start)) + var(--line-slow-y, 0px)),
+        0
+      )
+      rotate(calc(var(--line-lean) + var(--line-sway-rot, 0deg)));
   }
   to {
-    transform: translate3d(var(--fall-x-end, 0), var(--fall-y-end, var(--fall-end)), 0) rotate(var(--line-lean));
+    transform: translate3d(
+        calc(var(--fall-x-end, 0) + var(--line-sway-x, 0px)),
+        calc(var(--fall-y-end, var(--fall-end)) + var(--line-slow-y, 0px)),
+        0
+      )
+      rotate(calc(var(--line-lean) + var(--line-sway-rot, 0deg)));
   }
 }
 
@@ -360,6 +541,30 @@ html.dark .line-front span {
   }
 }
 
+@keyframes cursor-wave {
+  from {
+    width: 18px;
+    height: 18px;
+    opacity: 0.86;
+  }
+  to {
+    width: 124px;
+    height: 124px;
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-spark {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--spark-angle)) translateX(0);
+    opacity: 0.95;
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(var(--spark-angle)) translateX(var(--spark-distance, 30px));
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .line-container {
     gap: 1.2vw;
@@ -385,11 +590,124 @@ html.dark .line-front span {
   .stardust-layer::after {
     animation: none;
   }
+
+  .cursor-fx-layer {
+    display: none;
+  }
 }
 
 /* 1. 强制去除代码块（包括内联代码和代码段）的背景色 */
 pre,.chroma,.chroma.bg {
   background-color: transparent!important;
+}
+
+pre,
+.chroma,
+.chroma pre {
+  scrollbar-width: auto;
+  -ms-overflow-style: auto;
+}
+
+pre::-webkit-scrollbar,
+.chroma::-webkit-scrollbar,
+.chroma pre::-webkit-scrollbar {
+  width: initial !important;
+  height: initial !important;
+}
+
+.prose pre,
+pre,
+.chroma,
+.chroma pre {
+  overflow-x: auto !important;
+}
+
+.prose pre,
+pre,
+.chroma {
+  overflow-y: hidden !important;
+}
+
+.prose pre,
+pre,
+.chroma,
+.chroma pre {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.prose pre code,
+pre code,
+.chroma code {
+  white-space: pre !important;
+}
+
+.prose pre,
+pre,
+.chroma,
+.chroma pre {
+  scrollbar-color: var(--code-scrollbar-thumb) var(--code-scrollbar-track);
+}
+
+.prose pre::-webkit-scrollbar,
+pre::-webkit-scrollbar,
+.chroma::-webkit-scrollbar,
+.chroma pre::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.prose pre::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb,
+.chroma::-webkit-scrollbar-thumb,
+.chroma pre::-webkit-scrollbar-thumb {
+  background: var(--code-scrollbar-thumb) !important;
+  border-radius: 999px;
+}
+
+.prose pre::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track,
+.chroma::-webkit-scrollbar-track,
+.chroma pre::-webkit-scrollbar-track {
+  background: var(--code-scrollbar-track) !important;
+}
+
+.highlight,
+.prose .highlight,
+.highlight pre,
+.highlight .chroma,
+.highlight > div {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.highlight::-webkit-scrollbar,
+.prose .highlight::-webkit-scrollbar,
+.highlight pre::-webkit-scrollbar,
+.highlight .chroma::-webkit-scrollbar,
+.highlight > div::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.highlight::-webkit-scrollbar-thumb,
+.prose .highlight::-webkit-scrollbar-thumb,
+.highlight pre::-webkit-scrollbar-thumb,
+.highlight .chroma::-webkit-scrollbar-thumb,
+.highlight > div::-webkit-scrollbar-thumb {
+  background: var(--code-scrollbar-thumb) !important;
+  border-radius: 999px;
+  border: 2px solid var(--code-scrollbar-track);
+}
+
+.highlight::-webkit-scrollbar-track,
+.prose .highlight::-webkit-scrollbar-track,
+.highlight pre::-webkit-scrollbar-track,
+.highlight .chroma::-webkit-scrollbar-track,
+.highlight > div::-webkit-scrollbar-track {
+  background: var(--code-scrollbar-track) !important;
 }
 
 /* 2. 覆盖 Tailwind 默认的排版限制，使文章内容水平居中 */
@@ -399,4 +717,55 @@ pre,.chroma,.chroma.bg {
   /* Blowfish 默认限制了最大阅读宽度以保证体验。
      如果你觉得现在的文字太窄，也可以解除下面的注释来放宽限制：*/
    max-width: 100%!important; 
+}
+
+/* Enlarge the site title text from languages.zh-cn.toml title. */
+.main-menu > a.text-base.font-medium.truncate {
+  font-size: clamp(1.2rem, 2.1vw, 1.65rem) !important;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.site-title-handwrite {
+  font-family: "STKaiti", "KaiTi", "Segoe Script", "Brush Script MT", cursive;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.hero-typing-name,
+.hero-typing-headline {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-typing-name {
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+}
+
+.hero-typing-headline {
+  letter-spacing: 0.03em;
+  opacity: 0.92;
+}
+
+.typing-caret {
+  border-right: 2px solid currentColor;
+  animation: typing-caret-blink 0.78s steps(1, end) infinite;
+}
+
+@keyframes typing-caret-blink {
+  0%,
+  49% {
+    border-right-color: currentColor;
+  }
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-menu > a.text-base.font-medium.truncate {
+    font-size: 1.14rem !important;
+  }
 }
