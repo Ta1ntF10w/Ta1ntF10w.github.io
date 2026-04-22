@@ -726,10 +726,14 @@ pre::-webkit-scrollbar-track,
   letter-spacing: 0.02em;
 }
 
-.site-title-handwrite {
-  font-family: "STKaiti", "KaiTi", "Segoe Script", "Brush Script MT", cursive;
-  font-weight: 600 !important;
-  letter-spacing: 0.05em !important;
+html[lang^="zh"] .site-title-handwrite {
+  font-family: "STXingkai", "FZShuTi", "STKaiti", "KaiTi", "HanziPen SC", cursive;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: clamp(1.34rem, 2.4vw, 1.9rem) !important;
+  letter-spacing: 0.02em !important;
+  transform: none;
+  text-shadow: 0.4px 0.4px 0 rgba(23, 52, 79, 0.14);
 }
 
 .hero-typing-name,
