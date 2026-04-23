@@ -1,9 +1,9 @@
++++
 date = '2026-04-23T20:54:32+08:00'
 draft = false
 title = 'Java Deserialization CC1'
 categories = ["java"]
 tags = ["java-security", "deserialization", "cc1"]
-
 +++
 
 # 前言
