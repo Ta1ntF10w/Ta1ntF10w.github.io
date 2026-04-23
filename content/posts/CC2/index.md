@@ -1,4 +1,4 @@
-date = '2026-04-23T21:13:45+08:00'
+date = '2026-04-23T21:14:32+08:00'
 draft = false
 title = 'Java Deserialization CC2'
 categories = ["java"]
