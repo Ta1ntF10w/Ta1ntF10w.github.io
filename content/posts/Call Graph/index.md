@@ -85,7 +85,7 @@ public class Business {
 
 ## 0x02 CHA (Class Hierarchy Analysis)：基于类层次结构的静态分析
 
-![ChatGPT Image 2026年4月28日 20_25_12](ChatGPT Image 2026年4月28日 20_25_12.png)
+![ChatGPT Image 2026年4月28日 20_25_12](ChatGPT Image 20_25_12.png)
 
 CHA 是静态分析中构建调用图（Call Graph）最基础且效率最高的算法。它完全基于 Java 的类继承体系（Class Hierarchy）进行方法解析，不涉及任何关于程序运行时数据流或对象实例化状态的追踪。
 
@@ -156,7 +156,7 @@ CHA 的根本局限源于其**对程序状态的无知性**。它只阅读“户
 
 ## 0x03 RTA (Rapid Type Analysis)：引入全局实例化约束
 
-![ChatGPT Image 2026年4月28日 20_30_32](ChatGPT Image 2026年4月28日 20_30_32.png)
+![ChatGPT Image 2026年4月28日 20_30_32](ChatGPT Image  20_30_32.png)
 
 RTA 是对 CHA 的直接演进。CHA 的核心缺陷在于它假设继承树上的所有子类都可能在运行时出现，而忽略了这些类是否真的被程序创建过。RTA 通过引入全局实例化信息（Global Instantiation Information）来缩小搜索范围，从而显著提升调用图的精度。
 
@@ -233,6 +233,8 @@ public void test() {
 在上述代码中，RTA 会因为 `new SmsSender()` 的存在，认为“调用点 1”可能指向 `SmsSender`。要解决这个“全局污染”问题，必须引入能够追踪变量具体流向的算法，即下一节要讨论的 **VTA（Variable Type Analysis）**。
 
 ## 0x04 VTA (Variable Type Analysis)：基于类型传播图的流向分析
+
+![ChatGPT Image 2026年4月28日 20_48_10](ChatGPT Image  20_48_10.png)
 
 VTA 是比 RTA 更高级的算法。RTA 的局限性在于其维护的是一个“全局实例化集合”，只要程序中任何地方创建了对象，就会干扰所有相关的调用点。VTA 通过构建**类型传播图（Type Propagation Graph, TPG）**，将分析粒度从“全程序”细化到了“变量级”，从而实现了对数据流向的追踪。
 
