@@ -87,7 +87,7 @@ public class Business {
 
 ## 0x02 CHA (Class Hierarchy Analysis)：基于类层次结构的静态分析
 
-![ChatGPT Image 2026年4月28日 20_25_12](ChatGPT Image 20_25_12.png)
+![ChatGPT Image  20_25_12](ChatGPT Image 20_25_12.png)
 
 CHA 是静态分析中构建调用图（Call Graph）最基础且效率最高的算法。它完全基于 Java 的类继承体系（Class Hierarchy）进行方法解析，不涉及任何关于程序运行时数据流或对象实例化状态的追踪。
 
