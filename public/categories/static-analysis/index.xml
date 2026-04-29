@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static-Analysis on 行到水穷处，坐看云起时</title>
+    <link>//localhost:1313/categories/static-analysis/</link>
+    <description>Recent content in Static-Analysis on 行到水穷处，坐看云起时</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
+    <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
+    <copyright>2026 Ta1ntF10w</copyright>
+    <lastBuildDate>Tue, 28 Apr 2026 19:56:27 +0800</lastBuildDate><atom:link href="//localhost:1313/categories/static-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Soot Study 3: 基于过程间分析的调用图构建理论与实现</title>
+      <link>//localhost:1313/posts/call-graph/</link>
+      <pubDate>Tue, 28 Apr 2026 19:56:27 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/call-graph/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Soot Study 2: 基于控制流图的数据流分析理论与实现基础</title>
+      <link>//localhost:1313/posts/cfg-application/</link>
+      <pubDate>Tue, 28 Apr 2026 14:00:00 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/cfg-application/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Soot Study 1</title>
+      <link>//localhost:1313/posts/soot-study/</link>
+      <pubDate>Tue, 28 Apr 2026 13:36:46 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/soot-study/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to Static Analysis</title>
+      <link>//localhost:1313/posts/introduction-to-static-analysis/</link>
+      <pubDate>Mon, 27 Apr 2026 15:09:26 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/introduction-to-static-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

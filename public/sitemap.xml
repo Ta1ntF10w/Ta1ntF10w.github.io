@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>/en/sitemap.xml</loc></sitemap><sitemap><loc>/zh-cn/sitemap.xml</loc><lastmod>2026-04-22T15:58:26+08:00</lastmod></sitemap></sitemapindex>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>//localhost:1313/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>//localhost:1313/zh-cn/sitemap.xml</loc>
+    
+      <lastmod>2026-04-28T19:56:27+08:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

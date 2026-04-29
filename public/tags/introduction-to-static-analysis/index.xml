@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction to Static Analysis on 行到水穷处，坐看云起时</title>
+    <link>//localhost:1313/tags/introduction-to-static-analysis/</link>
+    <description>Recent content in Introduction to Static Analysis on 行到水穷处，坐看云起时</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
+    <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
+    <copyright>2026 Ta1ntF10w</copyright>
+    <lastBuildDate>Mon, 27 Apr 2026 15:09:26 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/introduction-to-static-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introduction to Static Analysis</title>
+      <link>//localhost:1313/posts/introduction-to-static-analysis/</link>
+      <pubDate>Mon, 27 Apr 2026 15:09:26 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>//localhost:1313/posts/introduction-to-static-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
