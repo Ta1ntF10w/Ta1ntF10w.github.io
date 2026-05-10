@@ -1,6 +1,9 @@
 +++
 date = '2026-04-28T14:00:00+08:00'
 draft = false
+
+math: true 
+
 title = 'Soot Study 2: 基于控制流图的数据流分析理论与实现基础'
 categories = ["static-analysis"]
 tags = ["Study", "Data Flow Analysis", "Soot Study 2"]

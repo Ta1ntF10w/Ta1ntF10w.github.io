@@ -1,6 +1,9 @@
 +++
 date = '2026-04-27T15:09:26+08:00'
 draft = false
+
+math: true 
+
 title = 'Introduction to Static Analysis'
 categories = ["static-analysis"]
 tags = ["introduction", "deserialization", "Introduction to Static Analysis"]

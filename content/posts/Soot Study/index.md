@@ -2,6 +2,9 @@
 date = '2026-04-28T13:36:46+08:00'
 draft = false
 title = 'Soot Study 1'
+
+math: true 
+
 categories = ["static-analysis"]
 tags = ["Study", "deserialization", "Soot Study 1"]
 
