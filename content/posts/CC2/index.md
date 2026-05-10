@@ -2,7 +2,7 @@
 date = '2026-04-23T20:54:32+08:00'
 draft = false
 
-math: true 
+math = true
 
 title = 'Java Deserialization CC2'
 categories = ["java"]

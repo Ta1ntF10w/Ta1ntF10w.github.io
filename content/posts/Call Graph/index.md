@@ -2,7 +2,7 @@
 date = '2026-04-28T19:56:27+08:00'
 draft = false
 
-math: true 
+math = true
 
 title = 'Soot Study 3: 基于过程间分析的调用图构建理论与实现'
 categories = ["static-analysis"]

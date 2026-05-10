@@ -2,7 +2,7 @@
 date = '2026-05-10T12:15:02+08:00'
 draft = false
 
-math: true 
+math = true
 
 title = 'Soot Study 4: 基于指针分析与上下文敏感的调用图构建理论与实现'
 categories = ["static-analysis"]
