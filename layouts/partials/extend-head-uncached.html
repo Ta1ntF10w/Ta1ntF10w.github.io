@@ -21,3 +21,47 @@
     })();
   </script>
 {{ end }}
+
+{{/* Force KaTeX assets + render for all pages */}}
+{{ $katexCSS := resources.Get "lib/katex/katex.min.css" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="{{ $katexCSS.RelPermalink }}"
+  integrity="{{ $katexCSS.Data.Integrity }}">
+{{ $katexLib := resources.Get "lib/katex/katex.min.js" }}
+{{ $katexRenderLib := resources.Get "lib/katex/auto-render.min.js" }}
+{{ $katexJS := slice $katexLib $katexRenderLib | resources.Concat "js/katex.bundle.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script
+  defer
+  type="text/javascript"
+  src="{{ $katexJS.RelPermalink }}"
+  integrity="{{ $katexJS.Data.Integrity }}"></script>
+<script>
+  (function () {
+    function renderAll() {
+      if (typeof renderMathInElement !== "function") {
+        return false;
+      }
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ]
+      });
+      return true;
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!renderAll()) {
+          window.addEventListener("load", renderAll, { once: true });
+        }
+      });
+    } else if (!renderAll()) {
+      window.addEventListener("load", renderAll, { once: true });
+    }
+  })();
+</script>

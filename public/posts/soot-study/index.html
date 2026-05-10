@@ -170,7 +170,6 @@
 
 
 
-
   
   
   <link
@@ -421,6 +420,50 @@
     })();
   </script>
 
+
+
+
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="/lib/katex/katex.min.6d9419db28049216d737bd9d049aecbd7afa3e125a91bec3b800cd9ad2b264a1e1f942bd4635915b7fc17c4c2c97b5b87b28cda20c96b7f982ca4e12d3b28fb2.css"
+  integrity="sha512-bZQZ2ygEkhbXN72dBJrsvXr6PhJakb7DuADNmtKyZKHh&#43;UK9RjWRW3/BfEwsl7W4eyjNogyWt/mCyk4S07KPsg==">
+
+
+
+<script
+  defer
+  type="text/javascript"
+  src="/js/katex.bundle.fb416df2aa1d76bf7beea158d2c5b760dfb7f801a8b34dc834deac18e169f7f2017de695e0dda839665893495c05c2372ab7064c9c71b047a9d7c2f8edb96ca6.js"
+  integrity="sha512-&#43;0Ft8qoddr977qFY0sW3YN&#43;3&#43;AGos03INN6sGOFp9/IBfeaV4N2oOWZYk0lcBcI3KrcGTJxxsEep18L47blspg=="></script>
+<script>
+  (function () {
+    function renderAll() {
+      if (typeof renderMathInElement !== "function") {
+        return false;
+      }
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ]
+      });
+      return true;
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!renderAll()) {
+          window.addEventListener("load", renderAll, { once: true });
+        }
+      });
+    } else if (!renderAll()) {
+      window.addEventListener("load", renderAll, { once: true });
+    }
+  })();
+</script>
 
   
 
