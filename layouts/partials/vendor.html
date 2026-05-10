@@ -25,8 +25,7 @@
 {{ end }}
 
 {{/* Katex */}}
-{{ $pageMath := .Params.math | default (.Site.Params.article.math | default false) }}
-{{ $shouldLoadKatex := and $pageMath (in (slice "page" "section" "home" "term" "taxonomy") .Kind) }}
+{{ $shouldLoadKatex := in (slice "page" "section" "home" "term" "taxonomy") .Kind }}
 {{ if or (.Page.HasShortcode "katex") $shouldLoadKatex }}
   {{ $katexCSS := resources.Get "lib/katex/katex.min.css" }}
   {{ $katexCSS := $katexCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
@@ -197,4 +196,3 @@
   }
 </script>
 {{ end }}
-
