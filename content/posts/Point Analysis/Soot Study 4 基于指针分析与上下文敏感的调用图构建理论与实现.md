@@ -161,7 +161,7 @@ public class CSCallGraphDriver {
 
 执行上述分析驱动，提取生成的 `cs_callgraph.dot` 数据。针对 `AlgorithmDemo` 中 `email1.send()` 这一多态调用点，引擎行为发生本质变化。
 
-![image-20260510125812245](C:/Users/ldsSec/AppData/Roaming/Typora/typora-user-images/image-20260510125812245.png)
+![image-20260510125812245](image-20260510125812245.png)
 
 1. 精度提升表现
 
