@@ -1,12 +1,12 @@
 +++
-date = '2026-05-10T12:15:02+08:00'
+date = '2026-05-13T20:05:02+08:00'
 draft = false
 
 math = true
 
-title = 'Soot Study 4: 基于指针分析与上下文敏感的调用图构建理论与实现'
+title = 'Soot Summary'
 categories = ["static-analysis"]
-tags = ["Study", "Point Analysis", "Soot Study 4"]
+tags = ["Summary", "Point Analysis", "Soot Summary"]
 +++
 
 最近看到哆啦A梦讲408，觉得很有意思，于是把我之前的写的关于静态分析的内容，喂给ai，让他帮忙生成小漫画，看起来效果还不错
