@@ -8,6 +8,8 @@ math = true
 categories = ["static-analysis"]
 tags = ["Study", "deserialization", "CodeQL introduction"]
 
++++
+
 
 
 
