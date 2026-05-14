@@ -39,6 +39,8 @@ tags = ["Study", "deserialization", "CodeQL Taint Analysis"]
 
 ## 0x02 实战演练：一个“狡猾”的命令注入靶场
 
+![052eb5b1-8c26-4736-ad83-5c0cd329b165](052eb5b1-8c26-4736-ad83-5c0cd329b165.png)
+
 为了见证 CodeQL 跨函数追踪的威力，我们先准备一个带有“伪装”的漏洞代码 `Hello.java`。
 
 在这个代码里，用户的输入 `args[0]` 并没有直接丢给 `exec`，而是经过了变量赋值、字符串拼接、以及多次跨函数传递：
