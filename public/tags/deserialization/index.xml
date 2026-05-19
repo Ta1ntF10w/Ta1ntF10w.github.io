@@ -2,81 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deserialization on 行到水穷处，坐看云起时</title>
-    <link>//localhost:1313/tags/deserialization/</link>
+    <link>/tags/deserialization/</link>
     <description>Recent content in Deserialization on 行到水穷处，坐看云起时</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
     <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
     <copyright>2026 Ta1ntF10w</copyright>
-    <lastBuildDate>Tue, 28 Apr 2026 13:36:46 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/deserialization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 May 2026 20:12:24 +0800</lastBuildDate><atom:link href="/tags/deserialization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CodeQL Study 2: 突破静态匹配——用污点追踪 (Taint Tracking) 还原完整攻击链路</title>
+      <link>/posts/codeql-taint-analysis/</link>
+      <pubDate>Thu, 14 May 2026 20:12:24 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>/posts/codeql-taint-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CodeQL introduction</title>
+      <link>/posts/codeql-introduction/</link>
+      <pubDate>Thu, 14 May 2026 18:59:46 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>/posts/codeql-introduction/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Soot Study 1</title>
-      <link>//localhost:1313/posts/soot-study/</link>
+      <link>/posts/soot-study/</link>
       <pubDate>Tue, 28 Apr 2026 13:36:46 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/soot-study/</guid>
+      <guid>/posts/soot-study/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Introduction to Static Analysis</title>
-      <link>//localhost:1313/posts/introduction-to-static-analysis/</link>
+      <link>/posts/introduction-to-static-analysis/</link>
       <pubDate>Mon, 27 Apr 2026 15:09:26 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/introduction-to-static-analysis/</guid>
+      <guid>/posts/introduction-to-static-analysis/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Java Deserialization CC4-CC7</title>
-      <link>//localhost:1313/posts/cc4-7/</link>
+      <link>/posts/cc4-7/</link>
       <pubDate>Mon, 27 Apr 2026 15:09:26 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/cc4-7/</guid>
+      <guid>/posts/cc4-7/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Java Deserialization CC3</title>
-      <link>//localhost:1313/posts/cc3/</link>
+      <link>/posts/cc3/</link>
       <pubDate>Fri, 24 Apr 2026 16:54:21 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/cc3/</guid>
+      <guid>/posts/cc3/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Java Deserialization CC2</title>
-      <link>//localhost:1313/posts/cc2/</link>
+      <link>/posts/cc2/</link>
       <pubDate>Thu, 23 Apr 2026 20:54:32 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/cc2/</guid>
+      <guid>/posts/cc2/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Dynamic Class Load</title>
-      <link>//localhost:1313/posts/dynamicclassload/</link>
+      <link>/posts/dynamicclassload/</link>
       <pubDate>Thu, 23 Apr 2026 18:46:26 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/dynamicclassload/</guid>
+      <guid>/posts/dynamicclassload/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Java Deserialization CC1</title>
-      <link>//localhost:1313/posts/cc1/</link>
+      <link>/posts/cc1/</link>
       <pubDate>Wed, 22 Apr 2026 15:58:26 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/cc1/</guid>
+      <guid>/posts/cc1/</guid>
       <description></description>
       
     </item>

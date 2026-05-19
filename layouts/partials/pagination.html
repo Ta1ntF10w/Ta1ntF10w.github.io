@@ -1,0 +1,63 @@
+{{- if gt .Paginator.TotalPages 1 -}}
+  <ul class="flex flex-row mt-8 justify-center space-x-2">
+    {{- .Scratch.Set "paginator.ellipsed" false -}}
+    {{ if $.Paginator.HasPrev }}
+      <li>
+        <a
+          href="{{ $.Paginator.Prev.URL }}"
+          class="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300"
+          style="background: transparent; color: #15803d;"
+          onmouseover="this.style.background='#dcfce7'"
+          onmouseout="this.style.background='transparent'"
+          rel="prev"
+          >&larr;</a
+        >
+      </li>
+    {{ end }}
+    {{- range $.Paginator.Pagers -}}
+      {{- $right := sub .TotalPages .PageNumber -}}
+      {{- $showNumber := or (le .PageNumber 1) (eq $right 0) -}}
+      {{- $showNumber := or $showNumber (and (gt .PageNumber (sub $.Paginator.PageNumber 3)) (lt .PageNumber (add $.Paginator.PageNumber 3))) -}}
+      {{- if $showNumber -}}
+        {{- $.Scratch.Set "paginator.ellipsed" false -}}
+        {{- $.Scratch.Set "paginator.shouldEllipse" false -}}
+      {{- else -}}
+        {{- $.Scratch.Set "paginator.shouldEllipse" (not ($.Scratch.Get "paginator.ellipsed") ) -}}
+        {{- $.Scratch.Set "paginator.ellipsed" true -}}
+      {{- end -}}
+      {{- if $showNumber -}}
+        <li>
+          <a
+            href="{{ .URL }}"
+            class="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 {{ if eq . $.Paginator }}font-bold shadow-md{{ end }}"
+            {{ if eq . $.Paginator }}
+              style="background: #15803d; color: #ffffff;"
+            {{ else }}
+              style="background: transparent; color: #15803d;"
+              onmouseover="this.style.background='#dcfce7'"
+              onmouseout="this.style.background='transparent'"
+            {{ end }}
+            >{{ .PageNumber }}</a
+          >
+        </li>
+      {{- else if ($.Scratch.Get "paginator.shouldEllipse") -}}
+        <li class="flex items-center justify-center w-8 h-8">
+          <span aria-hidden="true" style="color: #15803d;">&hellip;</span>
+        </li>
+      {{- end -}}
+    {{- end -}}
+    {{ if $.Paginator.HasNext }}
+      <li>
+        <a
+          href="{{ $.Paginator.Next.URL }}"
+          class="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300"
+          style="background: transparent; color: #15803d;"
+          onmouseover="this.style.background='#dcfce7'"
+          onmouseout="this.style.background='transparent'"
+          rel="next"
+          >&rarr;</a
+        >
+      </li>
+    {{ end }}
+  </ul>
+{{- end -}}

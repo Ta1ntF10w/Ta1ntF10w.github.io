@@ -2,51 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Study on 行到水穷处，坐看云起时</title>
-    <link>//localhost:1313/tags/study/</link>
+    <link>/tags/study/</link>
     <description>Recent content in Study on 行到水穷处，坐看云起时</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
     <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
     <copyright>2026 Ta1ntF10w</copyright>
-    <lastBuildDate>Sun, 10 May 2026 12:15:02 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 May 2026 20:12:24 +0800</lastBuildDate><atom:link href="/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CodeQL Study 2: 突破静态匹配——用污点追踪 (Taint Tracking) 还原完整攻击链路</title>
+      <link>/posts/codeql-taint-analysis/</link>
+      <pubDate>Thu, 14 May 2026 20:12:24 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>/posts/codeql-taint-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CodeQL introduction</title>
+      <link>/posts/codeql-introduction/</link>
+      <pubDate>Thu, 14 May 2026 18:59:46 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>/posts/codeql-introduction/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Soot Study 4: 基于指针分析与上下文敏感的调用图构建理论与实现</title>
-      <link>//localhost:1313/posts/point-analysis/</link>
+      <link>/posts/point-analysis/</link>
       <pubDate>Sun, 10 May 2026 12:15:02 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/point-analysis/</guid>
+      <guid>/posts/point-analysis/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Soot Study 3: 基于过程间分析的调用图构建理论与实现</title>
-      <link>//localhost:1313/posts/call-graph/</link>
+      <link>/posts/call-graph/</link>
       <pubDate>Tue, 28 Apr 2026 19:56:27 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/call-graph/</guid>
+      <guid>/posts/call-graph/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Soot Study 2: 基于控制流图的数据流分析理论与实现基础</title>
-      <link>//localhost:1313/posts/cfg-application/</link>
+      <link>/posts/cfg-application/</link>
       <pubDate>Tue, 28 Apr 2026 14:00:00 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/cfg-application/</guid>
+      <guid>/posts/cfg-application/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Soot Study 1</title>
-      <link>//localhost:1313/posts/soot-study/</link>
+      <link>/posts/soot-study/</link>
       <pubDate>Tue, 28 Apr 2026 13:36:46 +0800</pubDate>
       <author>2030305719@qq.com (Ta1ntF10w)</author>
-      <guid>//localhost:1313/posts/soot-study/</guid>
+      <guid>/posts/soot-study/</guid>
       <description></description>
       
     </item>

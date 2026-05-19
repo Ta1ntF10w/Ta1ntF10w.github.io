@@ -1,0 +1,15 @@
+{{ $recentArticles := 5 }}
+{{ if index .Site.Params.homepage "showRecentItems" }}
+  {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
+{{ end }}
+
+<section class="space-y-10 w-full">
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) $recentArticles }}
+  {{ range $paginator.Pages }}
+    {{ partial "article-link/simple.html" . }}
+  {{ end }}
+</section>
+
+<div class="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+  {{ partial "pagination.html" . }}
+</div>

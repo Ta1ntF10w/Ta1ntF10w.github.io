@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CodeQL Taint Analysis on 行到水穷处，坐看云起时</title>
+    <link>/tags/codeql-taint-analysis/</link>
+    <description>Recent content in CodeQL Taint Analysis on 行到水穷处，坐看云起时</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>2030305719@qq.com (Ta1ntF10w)</managingEditor>
+    <webMaster>2030305719@qq.com (Ta1ntF10w)</webMaster>
+    <copyright>2026 Ta1ntF10w</copyright>
+    <lastBuildDate>Thu, 14 May 2026 20:12:24 +0800</lastBuildDate><atom:link href="/tags/codeql-taint-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CodeQL Study 2: 突破静态匹配——用污点追踪 (Taint Tracking) 还原完整攻击链路</title>
+      <link>/posts/codeql-taint-analysis/</link>
+      <pubDate>Thu, 14 May 2026 20:12:24 +0800</pubDate>
+      <author>2030305719@qq.com (Ta1ntF10w)</author>
+      <guid>/posts/codeql-taint-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
